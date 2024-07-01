@@ -1,34 +1,39 @@
 {
-  "productName": "updater",
-  "version": "0.0.0",
-  "identifier": "com.tauri.dev",
-  "build": {
-    "beforeDevCommand": "npm run dev",
-    "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "npm run build",
-    "frontendDist": "../dist"
-  },
-  "app": {
-    "windows": [
-      {
-        "title": "updater",
-        "width": 800,
-        "height": 600
-      }
-    ],
-    "security": {
-      "csp": null
-    }
-  },
-  "bundle": {
-    "active": true,
-    "targets": "all",
-    "icon": [
-      "icons/32x32.png",
-      "icons/128x128.png",
-      "icons/128x128@2x.png",
-      "icons/icon.icns",
-      "icons/icon.ico"
-    ]
-  }
+	"productName": "updater",
+	"version": "0.0.1",
+	"identifier": "com.joas.santos",
+	"build": {
+		"beforeDevCommand": "npm run dev",
+		"devUrl": "http://localhost:1420",
+		"beforeBuildCommand": "npm run build",
+		"frontendDist": "../dist"
+	},
+	"app": {
+		"windows": [
+			{
+				"title": "updater",
+				"width": 800,
+				"height": 600
+			}
+		],
+		"security": {
+			"csp": null
+		}
+	},
+	"bundle": {
+		"active": true,
+		"targets": "all",
+		"icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.icns", "icons/icon.ico"]
+	},
+	"plugins": {
+		"updater": {
+			"active": true,
+			"windows": {
+				"installMode": "passive"
+			},
+			"dialog": true,
+			"pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEEyQjVDQjMxQUM4Rjk0NjEKUldSaGxJK3NNY3Uxb2dJTDNBTVcwR1R4ZCtUeThyQzRsUS9tRWJhVTdaVzNkSlpqSnAvSFdHZnAK",
+			"endpoints": ["https://raw.githubusercontent.com/joaspiosantos/02-updater/main/lastest.json"]
+		}
+	}
 }
